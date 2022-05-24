@@ -1,0 +1,6 @@
+C:\Users\Angel\source\repos\RNA\RNA\bin\Debug\RNA.dll
+C:\Users\Angel\source\repos\RNA\RNA\bin\Debug\RNA.pdb
+C:\Users\Angel\source\repos\RNA\RNA\obj\Debug\Datos.csproj.AssemblyReference.cache
+C:\Users\Angel\source\repos\RNA\RNA\obj\Debug\Datos.csproj.CoreCompileInputs.cache
+C:\Users\Angel\source\repos\RNA\RNA\obj\Debug\RNA.dll
+C:\Users\Angel\source\repos\RNA\RNA\obj\Debug\RNA.pdb

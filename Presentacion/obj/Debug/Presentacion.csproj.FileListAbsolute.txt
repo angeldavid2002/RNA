@@ -1,0 +1,17 @@
+C:\Users\Angel\source\repos\RNA\Presentacion\bin\Debug\Presentacion.exe.config
+C:\Users\Angel\source\repos\RNA\Presentacion\bin\Debug\Presentacion.exe
+C:\Users\Angel\source\repos\RNA\Presentacion\bin\Debug\Presentacion.pdb
+C:\Users\Angel\source\repos\RNA\Presentacion\bin\Debug\RNA.dll
+C:\Users\Angel\source\repos\RNA\Presentacion\bin\Debug\RNA.pdb
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.csproj.AssemblyReference.cache
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.csproj.SuggestedBindingRedirects.cache
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.Properties.Resources.resources
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.csproj.GenerateResource.cache
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.csproj.CoreCompileInputs.cache
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.csproj.CopyComplete
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.exe
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.pdb
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.ParametrosEntradaForm.resources
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.ConfiguracionRedFrm.resources
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.UmbralesUnicapa.resources
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.PesosUnicapa.resources
