@@ -15,12 +15,43 @@ namespace Datos
         string rutaArchivo="";
         double[,] pesos;
         Parametros parametros;
-
         public datos(string ruta)
         {
             rutaArchivo = ruta;
         }
+        public void GuardarPeso(Double[,] Peso,int salidas, int entradas,int num)
+        {
+            DateTime hora = DateTime.Now;
+            string fecha = hora.ToString("MMMM dd, yyyy HH mm ss");
+            FileStream file = new FileStream("Pesos "+fecha+" "+num+".txt", FileMode.OpenOrCreate);
+            StreamWriter writer = new StreamWriter(file);
+            for (int i = 0; i < salidas; i++)
+            {
+                for (int j = 0; j < entradas; j++)
+                {
+                    writer.Write(Peso[i,j] + ";" );
+                }
+                writer.Write("\n");
+            }
+            
+            writer.Close();
+            file.Close();
+        }
+        public void GuardarUmbral(Double[] umbral, int salidas, int num)
+        {
+            DateTime hora = DateTime.Now;
+            string fecha = hora.ToString("MMMM dd, yyyy HH mm ss");
+            FileStream file = new FileStream("Umbrales " + fecha + " " + num + ".txt", FileMode.OpenOrCreate);
+            StreamWriter writer = new StreamWriter(file);
+            for (int i = 0; i < salidas; i++)
+            {
+                writer.Write(umbral[i] + ";");
+            }
+            writer.Write("\n");
 
+            writer.Close();
+            file.Close();
+        }
         public double[,] CalcularPesos()
         {
             double temp;

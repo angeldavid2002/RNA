@@ -28,7 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.TxtUmbrales = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // TxtUmbrales
+            // 
+            this.TxtUmbrales.Location = new System.Drawing.Point(12, 12);
+            this.TxtUmbrales.Multiline = true;
+            this.TxtUmbrales.Name = "TxtUmbrales";
+            this.TxtUmbrales.Size = new System.Drawing.Size(776, 426);
+            this.TxtUmbrales.TabIndex = 0;
             // 
             // FrmUmbralMulti
             // 
@@ -36,12 +45,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.TxtUmbrales);
             this.Name = "FrmUmbralMulti";
             this.Text = "FrmUmbralMulti";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox TxtUmbrales;
     }
 }

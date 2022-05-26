@@ -35,6 +35,7 @@ namespace Presentacion
                 TxtUmbrales.Text += "|\t" + umbrales[i].ToString() + "\t|";
             }
             TxtUmbrales.TextAlign = HorizontalAlignment.Center;
+            datos.GuardarUmbral(umbrales,salidas,1);
         }
 
     }

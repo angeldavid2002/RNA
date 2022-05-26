@@ -17,9 +17,26 @@ namespace Presentacion
         Parametros parametros1;
         int salidaArchivo,entrada=0;
         List<PesosMulti> pesosList= new List<PesosMulti>();
+        List<UmbralMulti> umbralList = new List<UmbralMulti>();
         PesosMulti P1,P2,P3,P4;
-        List<double[]> umbralList = new List<double[]>();
 
+        private void CmbTipoRed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CmbTipoRed.Text=="Adaline" || CmbTipoRed.Text=="Percetron" )
+            {
+                CmbAlgoritmo.Items.Clear();
+                CmbAlgoritmo.Items.Add("Regla Delta");
+                CmbAlgoritmo.SelectedIndex = 0;
+            }
+            else if (CmbTipoRed.Text=="Backpropagation")
+            {
+                CmbAlgoritmo.Items.Clear();
+                CmbAlgoritmo.Items.Add("Propagacion inversa");
+                CmbAlgoritmo.SelectedIndex = 0;
+            }
+        }
+
+        UmbralMulti U1, U2, U3, U4;
         public FrmMenuMulticapa(datos datos, Parametros parametros)
         {
             InitializeComponent();
@@ -30,6 +47,13 @@ namespace Presentacion
             CmbFuncionActivacion2.Enabled = false;
             CmbFuncionActivacion3.Enabled = false;
             CmbCapasIntermadias.SelectedIndex= 0;
+            CmbTipoRed.SelectedIndex=0;
+            CmbAlgoritmo.Enabled = false;
+            CmbFuncionActivacion1.SelectedIndex = 0;
+            CmbFuncionActivacion2.SelectedIndex = 0;
+            CmbFuncionActivacion3.SelectedIndex = 0;
+            Number2.Enabled = false;
+            Number3.Enabled = false;
         }
 
         private void BtnGenerar_Click(object sender, EventArgs e)
@@ -42,7 +66,11 @@ namespace Presentacion
                 P2 = new PesosMulti(datos1.CalcularPesosParametro(salidaArchivo, Convert.ToInt32(Number1.Value)), Convert.ToInt32(Number1.Value), salidaArchivo);
                 pesosList.Add(P2);
 
-                umbralList.Add(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number1.Value)));
+                U1 = new UmbralMulti(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number1.Value)), Convert.ToInt32(Number1.Value));
+                umbralList.Add(U1);
+
+                U2 = new UmbralMulti(datos1.CalcularUmbralesParametros(salidaArchivo), salidaArchivo);
+                umbralList.Add(U2);
 
             }
             else if (CmbCapasIntermadias.Text=="2")
@@ -56,10 +84,14 @@ namespace Presentacion
                 P3 = new PesosMulti(datos1.CalcularPesosParametro(salidaArchivo, Convert.ToInt32(Number2.Value)), Convert.ToInt32(Number2.Value), salidaArchivo);
                 pesosList.Add(P3);
 
+                U1 = new UmbralMulti(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number1.Value)), Convert.ToInt32(Number1.Value));
+                umbralList.Add(U1);
 
-                umbralList.Add(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number1.Value)));
-                umbralList.Add(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number2.Value)));
-                umbralList.Add(datos1.CalcularUmbralesParametros(salidaArchivo));
+                U2 = new UmbralMulti(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number2.Value)), Convert.ToInt32(Number2.Value));
+                umbralList.Add(U2);
+
+                U3 = new UmbralMulti(datos1.CalcularUmbralesParametros(salidaArchivo), salidaArchivo);
+                umbralList.Add(U3);
 
             }
             else if (CmbCapasIntermadias.Text == "3")
@@ -76,13 +108,23 @@ namespace Presentacion
                 P4 = new PesosMulti(datos1.CalcularPesosParametro(salidaArchivo, Convert.ToInt32(Number3.Value)), Convert.ToInt32(Number3.Value), salidaArchivo);
                 pesosList.Add(P4);
 
-                umbralList.Add(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number1.Value)));
-                umbralList.Add(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number2.Value)));
-                umbralList.Add(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number3.Value)));
-                umbralList.Add(datos1.CalcularUmbralesParametros(salidaArchivo));
+                U1 = new UmbralMulti(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number1.Value)), Convert.ToInt32(Number1.Value));
+                umbralList.Add(U1);
+
+                U2 = new UmbralMulti(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number2.Value)), Convert.ToInt32(Number2.Value));
+                umbralList.Add(U2);
+
+                U3 = new UmbralMulti(datos1.CalcularUmbralesParametros(Convert.ToInt32(Number3.Value)), Convert.ToInt32(Number3.Value));
+                umbralList.Add(U3);
+
+                U4 = new UmbralMulti(datos1.CalcularUmbralesParametros(salidaArchivo), salidaArchivo);
+                umbralList.Add(U4);
+
             }
-            FrmPesoMulti pesoMulti = new FrmPesoMulti(pesosList,parametros1);
+            FrmPesoMulti pesoMulti = new FrmPesoMulti(pesosList,parametros1,datos1);
             pesoMulti.Show();
+            FrmUmbralMulti frmUmbralMulti = new FrmUmbralMulti(umbralList,parametros1,datos1);
+            frmUmbralMulti.Show();
         }
 
 
@@ -90,14 +132,25 @@ namespace Presentacion
         {
             if (CmbCapasIntermadias.Text=="1")
             {
-
+                CmbFuncionActivacion2.Enabled = false;
+                CmbFuncionActivacion3.Enabled = false;
+                Number2.Enabled = false;
+                Number3.Enabled = false;
             }
             else if (CmbCapasIntermadias.Text=="2")
             {
-
+                Number2.Enabled = true;
+                Number3.Enabled = false;
+                CmbFuncionActivacion2.Enabled = true;
+                CmbFuncionActivacion3.Enabled = false;
             }
             else if (CmbCapasIntermadias.Text=="3")
             {
+                Number2.Enabled = true;
+                Number3.Enabled = true;
+                CmbFuncionActivacion2.Enabled = true;
+                CmbFuncionActivacion3.Enabled = true;
+
             }
         }
     }
@@ -115,6 +168,20 @@ namespace Presentacion
             this.entrada = entrada;
             this.salida = salida;
             this.peso = peso;
+        }
+    }
+    public class UmbralMulti
+    {
+        public double[] umbral;
+        public int salida;
+        public UmbralMulti()
+        {
+
+        }
+        public UmbralMulti(double[] umbral, int salida)
+        {
+            this.salida = salida;
+            this.umbral = umbral;
         }
     }
 }

@@ -39,6 +39,7 @@ namespace Presentacion
                 }
                 TxtPesos.Text = TxtPesos.Text + Environment.NewLine;
             }
+            datos.GuardarPeso(pesos, salidas,entradas,1);
             TxtPesos.TextAlign = HorizontalAlignment.Center;
         }
 
