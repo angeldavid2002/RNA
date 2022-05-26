@@ -15,14 +15,14 @@ namespace Presentacion
     {
         datos datos;
         double[,] pesos;
-        int verificacion = 0;
         string matriz="";
         Parametros parametros;
-        public PesosUnicapa(datos datos,Parametros parametros)
+        public PesosUnicapa(datos datos,Parametros parametros, double[,]pesos)
         {
             InitializeComponent();
             this.datos = datos;
             this.parametros = parametros;
+            this.pesos = pesos;
             
             CargarMatriz();
         }
@@ -31,16 +31,10 @@ namespace Presentacion
         {
             int entradas = parametros.entrada;
             int salidas = parametros.salida;
-            if(verificacion == 0)
-            {
-                pesos = new double[entradas,salidas];
-                verificacion = 1;
-            }
-            pesos = datos.CalcularPesos();
             TxtPesos.Text = Environment.NewLine;
-            for (int i = 0; i < entradas; i++)
+            for (int i = 0; i < salidas; i++)
             {
-                for (int j = 0; j < salidas; j++)
+                for (int j = 0; j < entradas; j++)
                 {
                     TxtPesos.Text += "|\t"+ pesos[i,j].ToString()+"\t|";
                 }

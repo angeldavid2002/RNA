@@ -17,19 +17,18 @@ namespace Presentacion
         Parametros parametros;
         double[] umbrales;
 
-        public UmbralesUnicapa(datos datos,Parametros parametros)
+        public UmbralesUnicapa(datos datos,Parametros parametros, double[] umbrales)
         {
             InitializeComponent();
             this.datos = datos;
             this.parametros = parametros;
+            this.umbrales = umbrales;
             CargarMatriz();
         }
 
         void CargarMatriz()
         {
             int salidas = parametros.salida;
-            umbrales = new double[salidas];
-            umbrales = datos.CalcularUmbrales();
             TxtUmbrales.Text = Environment.NewLine;
             for (int i = 0; i < salidas; i++)
             {

@@ -34,14 +34,14 @@
             this.LblCapas = new System.Windows.Forms.Label();
             this.LblUnicapa = new System.Windows.Forms.Label();
             this.PnUnicapa = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CmbFuncionActivacion = new System.Windows.Forms.ComboBox();
             this.BtnUmbrales = new System.Windows.Forms.Button();
             this.BtnPesos = new System.Windows.Forms.Button();
             this.PnMulticapa = new System.Windows.Forms.Panel();
             this.LblMulticapa = new System.Windows.Forms.Label();
             this.NupCapa = new System.Windows.Forms.NumericUpDown();
             this.LblNumeroCapas = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.PnUnicapa.SuspendLayout();
             this.PnMulticapa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NupCapa)).BeginInit();
@@ -82,6 +82,7 @@
             this.CmbTipoRed.Name = "CmbTipoRed";
             this.CmbTipoRed.Size = new System.Drawing.Size(241, 24);
             this.CmbTipoRed.TabIndex = 2;
+            this.CmbTipoRed.SelectedIndexChanged += new System.EventHandler(this.CmbTipoRed_SelectedIndexChanged);
             // 
             // LblCapas
             // 
@@ -106,7 +107,7 @@
             // PnUnicapa
             // 
             this.PnUnicapa.Controls.Add(this.label1);
-            this.PnUnicapa.Controls.Add(this.comboBox1);
+            this.PnUnicapa.Controls.Add(this.CmbFuncionActivacion);
             this.PnUnicapa.Controls.Add(this.BtnUmbrales);
             this.PnUnicapa.Controls.Add(this.BtnPesos);
             this.PnUnicapa.Controls.Add(this.LblTipoRed);
@@ -116,6 +117,24 @@
             this.PnUnicapa.Name = "PnUnicapa";
             this.PnUnicapa.Size = new System.Drawing.Size(428, 520);
             this.PnUnicapa.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(22, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(207, 19);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Funcion De Activacion:";
+            // 
+            // CmbFuncionActivacion
+            // 
+            this.CmbFuncionActivacion.FormattingEnabled = true;
+            this.CmbFuncionActivacion.Location = new System.Drawing.Point(247, 149);
+            this.CmbFuncionActivacion.Name = "CmbFuncionActivacion";
+            this.CmbFuncionActivacion.Size = new System.Drawing.Size(155, 24);
+            this.CmbFuncionActivacion.TabIndex = 9;
             // 
             // BtnUmbrales
             // 
@@ -190,24 +209,6 @@
             this.LblNumeroCapas.TabIndex = 5;
             this.LblNumeroCapas.Text = "Numero de capas:";
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(247, 149);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(155, 24);
-            this.comboBox1.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Sans", 10.2F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(22, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 19);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Funcion De Activacion:";
-            // 
             // ConfiguracionRedFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -247,6 +248,6 @@
         private System.Windows.Forms.Button BtnUmbrales;
         private System.Windows.Forms.Button BtnPesos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CmbFuncionActivacion;
     }
 }

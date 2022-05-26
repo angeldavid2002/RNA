@@ -7,6 +7,10 @@ namespace Presentacion
     {
         datos datos;
         Parametros parametros = new Parametros();
+        int validacionPesos = 0;
+        int validacionUmbrales = 0;
+        double[,] pesos;
+        double[] umbrales;
         public ConfiguracionRedFrm(datos datos,Parametros parametros)
         {
             InitializeComponent();
@@ -14,6 +18,8 @@ namespace Presentacion
             PnUnicapa.Visible = false;
             this.datos = datos;
             this.parametros = parametros;
+            CmbTipoRed.SelectedIndex = 0;
+            CmbTipoCapa.SelectedIndex= 0;
         }
 
         private void CmbTipoCapa_SelectedIndexChanged(object sender, EventArgs e)
@@ -32,14 +38,39 @@ namespace Presentacion
 
         private void BtnPesos_Click(object sender, EventArgs e)
         {
-            Form formPesos = new PesosUnicapa(datos,parametros);
+            cargarMatrizPesos();
+            Form formPesos = new PesosUnicapa(datos,parametros,pesos);
             formPesos.Show();
+        }
+
+        void cargarMatrizPesos()
+        {
+            if (validacionPesos==0)
+            {
+                pesos = datos.CalcularPesos();
+                validacionPesos = 1;
+            }
         }
 
         private void BtnUmbrales_Click(object sender, EventArgs e)
         {
-            Form formUmbrales = new UmbralesUnicapa(datos,parametros);
+            cargarVectorUmbrales();
+            Form formUmbrales = new UmbralesUnicapa(datos,parametros,umbrales);
             formUmbrales.Show();
+        }
+
+        void cargarVectorUmbrales()
+        {
+            if (validacionUmbrales == 0)
+            {
+                umbrales = datos.CalcularUmbrales();
+                validacionUmbrales = 1;
+            }
+        }
+
+        private void CmbTipoRed_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -22,10 +22,10 @@ namespace Datos
         public double[,] CalcularPesos()
         {
             double temp;
-            pesos = new double[parametros.entrada, parametros.salida];
-            for (int i = 0; i < parametros.entrada; i++)
+            pesos = new double[parametros.salida, parametros.entrada];
+            for (int i = 0; i < parametros.salida; i++)
             {
-                for (int j = 0; j < parametros.salida; j++)
+                for (int j = 0; j < parametros.entrada; j++)
                 {
                     temp = random.NextDouble();
                     temp=Math.Round(temp,2);
@@ -36,7 +36,6 @@ namespace Datos
                     pesos[i, j] = temp;
                 }
             }
-
             return pesos;
         }
         
