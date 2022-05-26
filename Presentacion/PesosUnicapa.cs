@@ -15,7 +15,6 @@ namespace Presentacion
     {
         datos datos;
         double[,] pesos;
-        string matriz="";
         Parametros parametros;
         public PesosUnicapa(datos datos,Parametros parametros, double[,]pesos)
         {

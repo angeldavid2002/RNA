@@ -14,25 +14,23 @@ namespace Presentacion
         public ConfiguracionRedFrm(datos datos,Parametros parametros)
         {
             InitializeComponent();
-            PnMulticapa.Visible = false;
-            PnUnicapa.Visible = false;
+            PnUnicapa.Enabled = false;
             this.datos = datos;
             this.parametros = parametros;
             CmbTipoRed.SelectedIndex = 0;
             CmbTipoCapa.SelectedIndex= 0;
+            CmbFuncionActivacion.SelectedIndex= 0;
         }
 
         private void CmbTipoCapa_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CmbTipoCapa.Text.ToString() == "Unicapa")
             {
-                PnUnicapa.Visible = true;
-                PnMulticapa.Visible = false;
+                PnUnicapa.Enabled = true;
             }
             else if (CmbTipoCapa.Text.ToString() == "Multicapa")
             {
-                PnMulticapa.Visible = true;
-                PnUnicapa.Visible = false;
+                PnUnicapa.Enabled = false;
             }
         }
 
@@ -70,7 +68,44 @@ namespace Presentacion
 
         private void CmbTipoRed_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            if (CmbTipoRed.SelectedIndex==0)
+            {
+                //adaline
+                CmbFuncionActivacion.Items.Clear();
+                CmbFuncionActivacion.Items.Add("Lineal");
+                CmbAlgoritmoEntrenamiento.Items.Clear();
+                CmbAlgoritmoEntrenamiento.Items.Add("Regla delta");
+                CmbAlgoritmoEntrenamiento.SelectedIndex = 0;
+                CmbFuncionActivacion.SelectedIndex = 0;
+                CmbAlgoritmoEntrenamiento.Enabled = true;
+            }
+            else if (CmbTipoRed.SelectedIndex==1)
+            {
+                //percetron
+                CmbFuncionActivacion.Items.Clear();
+                CmbFuncionActivacion.Items.Add("Escalon");
+                CmbFuncionActivacion.SelectedIndex = 0;
+                CmbAlgoritmoEntrenamiento.Enabled = false;
+            }
+            else if(CmbTipoRed.SelectedIndex==2)
+            {
+                //backpropagation
+                CmbFuncionActivacion.Items.Clear();
+                CmbFuncionActivacion.Items.Add("Sigmoide");
+                CmbFuncionActivacion.Items.Add("Tangente Hiperbolica");
+                CmbAlgoritmoEntrenamiento.Items.Clear();
+                CmbAlgoritmoEntrenamiento.Items.Add("Propagacion inversa");
+                CmbAlgoritmoEntrenamiento.SelectedIndex = 0;
+                CmbFuncionActivacion.SelectedIndex = 0;
+                CmbAlgoritmoEntrenamiento.Enabled = true;
+            }
+        }
+
+        private void CmbFuncionActivacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
+
     }
 }
