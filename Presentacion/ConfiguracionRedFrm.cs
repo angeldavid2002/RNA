@@ -31,6 +31,8 @@ namespace Presentacion
             else if (CmbTipoCapa.Text.ToString() == "Multicapa")
             {
                 PnUnicapa.Enabled = false;
+                Form Multicapa = new FrmMenuMulticapa(datos,parametros);
+                Multicapa.Show();
             }
         }
 

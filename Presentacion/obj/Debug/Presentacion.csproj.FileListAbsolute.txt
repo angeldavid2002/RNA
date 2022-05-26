@@ -15,3 +15,6 @@ C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.ParametrosEn
 C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.ConfiguracionRedFrm.resources
 C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.UmbralesUnicapa.resources
 C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.PesosUnicapa.resources
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.FrmMenuMulticapa.resources
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.FrmPesoMulti.resources
+C:\Users\Angel\source\repos\RNA\Presentacion\obj\Debug\Presentacion.FrmUmbralMulti.resources

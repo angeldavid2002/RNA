@@ -52,6 +52,24 @@
     <Compile Include="ConfiguracionRedFrm.Designer.cs">
       <DependentUpon>ConfiguracionRedFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmMenuMulticapa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenuMulticapa.Designer.cs">
+      <DependentUpon>FrmMenuMulticapa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPesoMulti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPesoMulti.Designer.cs">
+      <DependentUpon>FrmPesoMulti.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUmbralMulti.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUmbralMulti.Designer.cs">
+      <DependentUpon>FrmUmbralMulti.cs</DependentUpon>
+    </Compile>
     <Compile Include="ParametrosEntradaFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +92,15 @@
     </Compile>
     <EmbeddedResource Include="ConfiguracionRedFrm.resx">
       <DependentUpon>ConfiguracionRedFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenuMulticapa.resx">
+      <DependentUpon>FrmMenuMulticapa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPesoMulti.resx">
+      <DependentUpon>FrmPesoMulti.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUmbralMulti.resx">
+      <DependentUpon>FrmUmbralMulti.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ParametrosEntradaFrm.resx">
       <DependentUpon>ParametrosEntradaFrm.cs</DependentUpon>

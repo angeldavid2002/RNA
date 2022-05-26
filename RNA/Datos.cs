@@ -9,6 +9,8 @@ namespace Datos
     {
         public static Random random = new Random();
         public static Random random2 = new Random();
+        public static Random random3 = new Random();
+        public static Random random4 = new Random();
         public int patrones = 0, entradas = 0, salidas = 0,validacion=0;
         string rutaArchivo="";
         double[,] pesos;
@@ -38,7 +40,27 @@ namespace Datos
             }
             return pesos;
         }
-        
+
+        public double[,] CalcularPesosParametro(int salida,int entrada)
+        {
+            double temp;
+            pesos = new double[salida,entrada];
+            for (int i = 0; i < salida; i++)
+            {
+                for (int j = 0; j < entrada; j++)
+                {
+                    temp = random3.NextDouble();
+                    temp = Math.Round(temp, 2);
+                    if (random3.Next(1, 3) == 2)
+                    {
+                        temp = temp * -1;
+                    }
+                    pesos[i, j] = temp;
+                }
+            }
+            return pesos;
+        }
+
         public double[] CalcularUmbrales()
         {
             double[] umbrales = new double[parametros.salida];
@@ -48,6 +70,23 @@ namespace Datos
                 temp = random2.NextDouble();
                 temp = Math.Round(temp, 2);
                 if (random2.Next(1, 3) == 2)
+                {
+                    temp = temp * -1;
+                }
+                umbrales[i] = temp;
+            }
+            return umbrales;
+        }
+
+        public double[] CalcularUmbralesParametros(int salida)
+        {
+            double[] umbrales = new double[salida];
+            double temp;
+            for (int i = 0; i < salida; i++)
+            {
+                temp = random4.NextDouble();
+                temp = Math.Round(temp, 2);
+                if (random4.Next(1, 3) == 2)
                 {
                     temp = temp * -1;
                 }
