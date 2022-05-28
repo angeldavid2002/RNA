@@ -31,6 +31,7 @@ namespace Presentacion
                     TxtSalidas.Text = parametros.salida.ToString();
                     TxtRuta.Text = rutaDeArchivo;
                     BtnContinuar.Enabled = true;
+                    Console.WriteLine(parametros.patrones);
                 }
                 catch (Exception ex)
                 {
